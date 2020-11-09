@@ -43,11 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="funcionarios\Auxiliar.cs" />
+    <Compile Include="funcionarios\Desenvolvedor.cs" />
+    <Compile Include="funcionarios\Designer.cs" />
     <Compile Include="funcionarios\Diretor.cs" />
     <Compile Include="funcionarios\Funcionario.cs" />
+    <Compile Include="funcionarios\FuncionarioAutenticavel.cs" />
+    <Compile Include="funcionarios\GerenteDeConta.cs" />
     <Compile Include="GerenciadorBonificacao.cs" />
+    <Compile Include="ParceiroComercial.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sistema\Autenticavel.cs" />
+    <Compile Include="Sistema\SistemaInterno.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

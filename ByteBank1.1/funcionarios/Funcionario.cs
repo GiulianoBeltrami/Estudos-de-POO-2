@@ -1,34 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ByteBank1._1.funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
         public static int NumeroFuncionarios { get; private set; }
-        public Funcionario(string cpf)
+        public Funcionario(double salario,string cpf)
         {
             this.CPF = cpf;
+            this.Salario = salario;
             NumeroFuncionarios++;
         }
-        
-        public virtual double GetBonificacao() //retorna a bonificacao
+        public Funcionario(string cpf) : this(1500,cpf)
         {
-            return Salario * 0.10;
+            this.CPF = cpf;
         }
 
-        public double AumentoSalario(int porcentagem_aumento)
-        {
-            return this.Salario += porcentagem_aumento * this.Salario; 
-        }
+        public abstract double GetBonificacao(); //retorna a bonificacao
+
+        public abstract void AumentarSalario(int porcentagem_aumento); //aumento em porcentagem
 
         public string Nome { get; set; }
         public string CPF { get; private set; }
-        public double Salario { get; set; }
-
+        public double Salario { get; protected set; }
+        
     }
 }
